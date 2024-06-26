@@ -1,0 +1,38 @@
+{
+  "name": "qrcode-extension",
+  "version": "1.0.0",
+  "description": "a chrome extension of producing qrcode",
+  "scripts": {
+    "start": "webpack serve --config webpack/webpack.dev.js --mode development"
+  },
+  "keywords": [
+    "chrome",
+    "extension"
+  ],
+  "author": "bye cherry",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "@vue/cli-plugin-typescript": "^5.0.8",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "fork-ts-checker-webpack-plugin": "^9.0.2",
+    "html-webpack-plugin": "^5.6.0",
+    "ts-loader": "^9.5.1",
+    "tsconfig-paths-webpack-plugin": "^4.1.0",
+    "typescript": "^5.5.2",
+    "unplugin-auto-import": "^0.17.6",
+    "unplugin-vue-components": "^0.27.1",
+    "vue-loader": "^17.4.2",
+    "vue-template-compiler": "^2.7.16",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  },
+  "dependencies": {
+    "css-loader": "^7.1.2",
+    "element-plus": "^2.7.6",
+    "style-loader": "^4.0.0",
+    "vue": "^3.4.30"
+  }
+}

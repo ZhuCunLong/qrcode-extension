@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "CommonJS",
+    "target": "ES2020",
+    "lib": ["es5", "es6", "dom", "es2019"],
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "baseUrl": ".",
+    "isolatedModules": false,
+    "allowSyntheticDefaultImports": true,
+    "removeComments": false,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
+}
