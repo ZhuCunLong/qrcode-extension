@@ -14,7 +14,8 @@
   "permissions": [
     "proxy",
     "contentSettings",
-    "alarms"
+    "alarms",
+    "storage"
   ],
   "host_permissions": [
     "*://*/*"

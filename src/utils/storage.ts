@@ -1,4 +1,5 @@
 export const setStorage = (key: string, value: any) => {
+  console.log('setStorage', chrome)
   chrome.storage.local.set({ [key]: value }).then((res) => console.log(res, '回调'))
 }
 
