@@ -54,6 +54,9 @@ importers:
       unplugin-auto-import:
         specifier: ^0.17.6
         version: 0.17.6(@vueuse/core@9.13.0(vue@3.4.30(typescript@5.5.2)))
+      unplugin-element-plus:
+        specifier: ^0.8.0
+        version: 0.8.0
       unplugin-vue-components:
         specifier: ^0.27.1
         version: 0.27.1(@babel/parser@7.24.7)(vue@3.4.30(typescript@5.5.2))
@@ -3284,6 +3287,10 @@ packages:
         optional: true
       '@vueuse/core':
         optional: true
+
+  unplugin-element-plus@0.8.0:
+    resolution: {integrity: sha512-jByUGY3FG2B8RJKFryqxx4eNtSTj+Hjlo8edcOdJymewndDQjThZ1pRUQHRjQsbKhTV2jEctJV7t7RJ405UL4g==}
+    engines: {node: '>=14.19.0'}
 
   unplugin-vue-components@0.27.1:
     resolution: {integrity: sha512-ximoYPwT9A5fc0ozy40IZbXR/XMRlTy69u4JfeqBMlsyuKHckQRisRqgzqve6m/ZeOh7eCHjEQP1WnBPW+YI+g==}
@@ -6961,6 +6968,15 @@ snapshots:
       unplugin: 1.10.1
     optionalDependencies:
       '@vueuse/core': 9.13.0(vue@3.4.30(typescript@5.5.2))
+    transitivePeerDependencies:
+      - rollup
+
+  unplugin-element-plus@0.8.0:
+    dependencies:
+      '@rollup/pluginutils': 5.1.0
+      es-module-lexer: 1.5.4
+      magic-string: 0.30.10
+      unplugin: 1.10.1
     transitivePeerDependencies:
       - rollup
 

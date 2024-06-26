@@ -7,9 +7,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
-const Components = require("unplugin-vue-components/webpack");
-const { ElementPlusResolver } = require("unplugin-vue-components/resolvers");
-
 // project root path
 const appDirectory = fs.realpathSync(process.cwd());
 
@@ -58,9 +55,9 @@ module.exports = {
         use: [
           {
             loader: "ts-loader",
-            options: {
-              appendTsSuffixTo: [/\.vue$/],
-            },
+            // options: {
+            //   appendTsSuffixTo: [/\.vue$/],
+            // },
           },
         ],
       },
@@ -81,12 +78,12 @@ module.exports = {
       ],
     }),
     new ForkTsCheckerWebpackPlugin(),
-    require("unplugin-auto-import/webpack").default({
-      resolvers: [ElementPlusResolver()],
-    }),
-    require("unplugin-vue-components/webpack").default({
-      resolvers: [ElementPlusResolver()],
-    }),
+    // require("unplugin-auto-import/webpack").default({
+    //   resolvers: [ElementPlusResolver()],
+    // }),
+    // require("unplugin-vue-components/webpack").default({
+    //   resolvers: [ElementPlusResolver()],
+    // }),
     new CleanWebpackPlugin(),
   ],
   stats: "minimal", // 或者 'errors-warnings' 显示错误和警告

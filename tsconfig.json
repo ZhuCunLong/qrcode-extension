@@ -2,19 +2,19 @@
   "compilerOptions": {
     "sourceMap": true,
     "noImplicitAny": false,
-    "module": "NodeNext",
+    "module": "CommonJS",
     "target": "ES2020",
     "lib": ["es5", "es6", "dom", "es2019"],
     "experimentalDecorators": true,
     "downlevelIteration": true,
     "baseUrl": ".",
-    "isolatedModules": true,
+    "isolatedModules": false,
     "allowSyntheticDefaultImports": true,
     "removeComments": false,
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "node",
     "paths": {
       "@/*": ["src/*"]
     },
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
+   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "auto-imports.d.ts", "components.d.ts"],
 }
