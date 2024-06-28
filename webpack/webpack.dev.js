@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+
 
 const webpack = require('webpack')
 const path = require('path')
@@ -14,9 +14,9 @@ module.exports = merge(commonConfig, {
   devtool: 'inline-source-map',
   plugins: [
     new webpack.DefinePlugin({
-      '__VUE_OPTIONS_API__': JSON.stringify(false), // 或false，取决于你的应用是否使用options API
-      '__VUE_PROD_DEVTOOLS__': JSON.stringify(true), // 如果你不希望在生产环境中有devtools
-      '__VUE_PROD_HYDRATION_MISMATCH_DETAILS__': JSON.stringify(false), // 根据你的需求设置
+      __VUE_OPTIONS_API__: JSON.stringify(false), // 或false，取决于你的应用是否使用options API
+      __VUE_PROD_DEVTOOLS__: JSON.stringify(true), // 如果你不希望在生产环境中有devtools
+      __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: JSON.stringify(false), // 根据你的需求设置
     }),
   ],
   devServer: {
@@ -40,6 +40,7 @@ module.exports = merge(commonConfig, {
     },
     client: {
       logging: 'warn',
+      overlay: false,
     }
   }
 })
