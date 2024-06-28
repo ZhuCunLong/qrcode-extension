@@ -1,19 +1,15 @@
 <template>
-  <div style="width: 500px">
-    <h1>Hello World{{ count }}</h1>
+  <div style="width: 500px" class="wrapper">
     <div ref="el"></div>
-    <div>缓存数据 {{ cacheCount }}</div>
-    <el-input v-model="input"></el-input>
-    <el-button @click="handleCreate">生成</el-button>
+    <div>
+      <el-input v-model="input"></el-input>
+      <el-button @click="handleCreate">生成</el-button>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue"
-
-const count = ref(0)
-
-const cacheCount = ref(null)
+import { ref, onMounted } from 'vue'
 
 const input = ref('')
 
@@ -23,11 +19,11 @@ const qrCode = ref<QRCode>(null)
 
 onMounted(() => {
   qrCode.value = new QRCode(el.value, {
-    text: "http://jindo.dev.naver.com/collie",
+    text: '',
     width: 128,
     height: 128,
-    colorDark: "#000000",
-    colorLight: "#ffffff",
+    colorDark: '#000000',
+    colorLight: '#ffffff',
     correctLevel: QRCode.CorrectLevel.H,
   })
 })
@@ -39,4 +35,8 @@ const handleCreate = async () => {
 }
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.wrapper{
+  display: flex;
+}
+</style>

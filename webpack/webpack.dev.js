@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const webpack = require('webpack')
-const path = require('path');
+const path = require('path')
 const fs = require('fs')
 const commonConfig = require('./webpack.common')
-const { merge } = require('webpack-merge');
+const { merge } = require('webpack-merge')
 
 // project root path
 const appDirectory = fs.realpathSync(process.cwd())
