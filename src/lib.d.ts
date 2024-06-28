@@ -3,5 +3,5 @@ declare class QRCode {
 
   makeCode(data: string): void;
 
-  static CorrectLevel: { L: "L"; M: "M"; Q: "Q"; H: "H" };
+  static CorrectLevel: { L: "L"; M: "M"; Q: "Q"; H: "H" }
 }

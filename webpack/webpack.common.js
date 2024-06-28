@@ -1,23 +1,25 @@
-const path = require("path");
-const fs = require("fs");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const TsConfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const { VueLoaderPlugin } = require("vue-loader");
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+/* eslint-disable @typescript-eslint/no-var-requires */
+
+const path = require("path")
+const fs = require("fs")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
+const TsConfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const { VueLoaderPlugin } = require("vue-loader")
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin")
 
 // project root path
-const appDirectory = fs.realpathSync(process.cwd());
+const appDirectory = fs.realpathSync(process.cwd())
 
-const appConfig = require("./app.config");
+const appConfig = require("./app.config")
 
-const buildApp = appConfig.filter((item) => item.build);
+const buildApp = appConfig.filter((item) => item.build)
 
 const entry = buildApp.reduce((res, item) => {
-  res[item.name] = path.resolve(appDirectory, item.entry);
-  return res;
-}, {});
+  res[item.name] = path.resolve(appDirectory, item.entry)
+  return res
+}, {})
 
 const allHtmlWebpackPlugins = buildApp.map(
   (item) =>
@@ -27,7 +29,7 @@ const allHtmlWebpackPlugins = buildApp.map(
       chunks: [item.name],
       cache: true,
     })
-);
+)
 
 module.exports = {
   resolve: {
@@ -79,13 +81,7 @@ module.exports = {
       ],
     }),
     new ForkTsCheckerWebpackPlugin(),
-    // require("unplugin-auto-import/webpack").default({
-    //   resolvers: [ElementPlusResolver()],
-    // }),
-    // require("unplugin-vue-components/webpack").default({
-    //   resolvers: [ElementPlusResolver()],
-    // }),
     new CleanWebpackPlugin(),
   ],
   stats: "minimal", // 或者 'errors-warnings' 显示错误和警告
-};
+}

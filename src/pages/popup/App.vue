@@ -9,16 +9,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import { setStorage, getStorage } from "@/utils/storage";
+import { ref, onMounted } from "vue"
 
-const count = ref(0);
+const count = ref(0)
 
-const cacheCount = ref(null);
+const cacheCount = ref(null)
 
-const input = ref('');
+const input = ref('')
 
-const el = ref();
+const el = ref()
 
 const qrCode = ref<QRCode>(null)
 
@@ -30,19 +29,12 @@ onMounted(() => {
     colorDark: "#000000",
     colorLight: "#ffffff",
     correctLevel: QRCode.CorrectLevel.H,
-  });
-});
-
-const handleClick = async () => {
-  count.value++;
-
-  // const url = await QRCode.toDataURL('')
-  // qrcodeSrc.value = url
-};
+  })
+})
 
 const handleCreate = async () => {
   if(input.value){
-    qrCode.value.makeCode(input.value); 
+    qrCode.value.makeCode(input.value)
   }
 }
 </script>
