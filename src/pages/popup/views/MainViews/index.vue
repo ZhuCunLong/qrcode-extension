@@ -15,13 +15,8 @@ import QrCode from '@/components/QrCode.vue'
 import QrCodeForm from '../components/QrCodeForm.vue'
 
 import { useQrCodeFormStore } from '../../store'
-import { watchEffect } from 'vue'
 
 const { composeUrl: text } = storeToRefs(useQrCodeFormStore())
-
-watchEffect(() => {
-  console.log('text', text)
-})
 
 </script>
 
