@@ -37,6 +37,9 @@ export default [
       quotes: ['error', 'single'], // 强制使用单引号
       semi: ['error', 'never'],
       'object-curly-spacing': ['error', 'always'], // 要求花括号内有空格
+      'space-infix-ops': ['error', { int32Hint: false }], // 要求中缀操作符周围有空格
+      'space-unary-ops': ['error', { words: true, nonwords: false }], // 要求一元操作符前后有空格
+      "comma-dangle": ["error", "always-multiline"],
       'quote-props': ['error', 'as-needed'],
       '@typescript-eslint/no-explicit-any': 'off',
       indent: ['error', 2],

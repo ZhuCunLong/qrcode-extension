@@ -14,7 +14,7 @@
  * 使用技术栈：https://github.com/davidshimjs/qrcodejs
  * 通过lib js引入
  */
-import { ref, withDefaults, watchEffect, onMounted } from 'vue'
+import { ref, watchEffect, onMounted } from 'vue'
 interface Props {
   width?: number
   height?: number

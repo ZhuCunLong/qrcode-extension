@@ -40,6 +40,7 @@
   "dependencies": {
     "css-loader": "^7.1.2",
     "element-plus": "^2.7.6",
+    "pinia": "^2.1.7",
     "style-loader": "^4.0.0",
     "vue": "^3.4.30"
   }

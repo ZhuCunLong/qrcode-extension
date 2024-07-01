@@ -14,6 +14,9 @@ importers:
       element-plus:
         specifier: ^2.7.6
         version: 2.7.6(vue@3.4.30(typescript@5.5.2))
+      pinia:
+        specifier: ^2.1.7
+        version: 2.1.7(typescript@5.5.2)(vue@3.4.30(typescript@5.5.2))
       style-loader:
         specifier: ^4.0.0
         version: 4.0.0(webpack@5.92.1(webpack-cli@5.1.4))
@@ -493,6 +496,9 @@ packages:
 
   '@vue/compiler-ssr@3.4.30':
     resolution: {integrity: sha512-ZJ56YZGXJDd6jky4mmM0rNaNP6kIbQu9LTKZDhcpddGe/3QIalB1WHHmZ6iZfFNyj5mSypTa4+qDJa5VIuxMSg==}
+
+  '@vue/devtools-api@6.6.3':
+    resolution: {integrity: sha512-0MiMsFma/HqA6g3KLKn+AGpL1kgKhFWszC9U29NfpWK5LE7bjeXxySWJrOJ77hBz+TBrBQ7o4QJqbPbqbs8rJw==}
 
   '@vue/eslint-config-prettier@9.0.0':
     resolution: {integrity: sha512-z1ZIAAUS9pKzo/ANEfd2sO+v2IUalz7cM/cTLOZ7vRFOPk5/xuRKQteOu1DErFLAh/lYGXMVZ0IfYKlyInuDVg==}
@@ -2029,6 +2035,18 @@ packages:
     resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
     engines: {node: '>=6'}
 
+  pinia@2.1.7:
+    resolution: {integrity: sha512-+C2AHFtcFqjPih0zpYuvof37SFxMQ7OEG2zV9jRI12i9BOy3YQVAHwdKtyyc8pDcDyIc33WCIsZaCFWU7WWxGQ==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.3.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+
   pinkie-promise@2.0.1:
     resolution: {integrity: sha512-0Gni6D4UcLTbv9c57DfxDGdr41XfgUjqWZu492f0cIGr16zDU06BWP/RAEvOuo7CQ0CNjHaLlM59YJJFm3NWlw==}
     engines: {node: '>=0.10.0'}
@@ -3218,6 +3236,8 @@ snapshots:
     dependencies:
       '@vue/compiler-dom': 3.4.30
       '@vue/shared': 3.4.30
+
+  '@vue/devtools-api@6.6.3': {}
 
   '@vue/eslint-config-prettier@9.0.0(@types/eslint@8.56.10)(eslint@9.5.0)(prettier@3.3.2)':
     dependencies:
@@ -4794,6 +4814,14 @@ snapshots:
   pify@2.3.0: {}
 
   pify@4.0.1: {}
+
+  pinia@2.1.7(typescript@5.5.2)(vue@3.4.30(typescript@5.5.2)):
+    dependencies:
+      '@vue/devtools-api': 6.6.3
+      vue: 3.4.30(typescript@5.5.2)
+      vue-demi: 0.14.8(vue@3.4.30(typescript@5.5.2))
+    optionalDependencies:
+      typescript: 5.5.2
 
   pinkie-promise@2.0.1:
     dependencies:

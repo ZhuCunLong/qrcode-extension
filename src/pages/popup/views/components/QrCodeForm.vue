@@ -31,24 +31,12 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, watchEffect } from 'vue'
+import { useQrCodeFormStore } from '@popup/store'
 
-const emit = defineEmits<{
-  (e: 'compositeValueUpdate', value: string): void
-}>()
+const store = useQrCodeFormStore()
 
-const formData = reactive({
-  prefix: '',
-  prefixEnCodingMode: 'decode',
-  url: '',
-  urlEnCodingMode: 'decode',
-  number: 1,
-})
+const { formData } = store
 
-watchEffect(() => {
-  const text = formData.prefix + formData.url
-  emit('compositeValueUpdate', text)
-})
 </script>
 
 <style scoped>

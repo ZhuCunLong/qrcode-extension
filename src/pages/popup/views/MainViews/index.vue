@@ -5,20 +5,24 @@
         <el-empty :imageSize="100" description="暂无二维码"/>
       </template>
     </qr-code>
-    <qr-code-form @compositeValueUpdate="handleCompositeValueUpdate" />
+    <qr-code-form />
   </div>
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
 import QrCode from '@/components/QrCode.vue'
 import QrCodeForm from '../components/QrCodeForm.vue'
-import { ref } from 'vue'
 
-const text = ref('')
+import { useQrCodeFormStore } from '../../store'
+import { watchEffect } from 'vue'
 
-const handleCompositeValueUpdate = (value: string) => {
-  text.value = value
-}
+const { composeUrl: text } = storeToRefs(useQrCodeFormStore())
+
+watchEffect(() => {
+  console.log('text', text)
+})
+
 </script>
 
 <style scoped lang="less">
