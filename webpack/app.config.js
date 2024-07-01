@@ -2,7 +2,7 @@
 module.exports = [
   {
     name: 'popup',
-    entry: './src/pages/popup/index.ts',
+    entry: './src/popup/index.ts',
     page: 'public/popup.html',
     build: true,
   },

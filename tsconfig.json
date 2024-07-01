@@ -14,7 +14,8 @@
     "moduleResolution": "node",
     "paths": {
       "@/*": ["src/*"],
-      "@popup/*": ["src/pages/popup/*"]
+      "@popup/*": ["src/popup/*"],
+      "@common/*": ["src/common/*"],
     },
   },
    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],

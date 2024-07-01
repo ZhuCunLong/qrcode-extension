@@ -1,9 +1,17 @@
 <template>
-  <div :style="{ width: `${width}px`, height: `${height}px` }">
-    <div v-show="text" ref="divEl"></div>
-    <slot v-if="!text" name="empty">
-      <div class="empty">暂无内容</div>
-    </slot>
+  <div class="qrcode-container" :style="{ width: `${width}px`}">
+    <div :style="{  height: `${height}px` }">
+      <div v-show="text" ref="divEl"></div>
+      <slot v-if="!text" name="empty">
+        <div class="empty">暂无内容</div>
+      </slot>
+    </div>
+    <div
+      v-if="showText && text"
+      style="text-align: center;"
+      class="mt20 qrcode-text">
+      {{ text }}
+    </div>
   </div>
 </template>
 
@@ -19,6 +27,7 @@ interface Props {
   width?: number
   height?: number
   text?: string
+  showText?: boolean
 }
 const props = withDefaults(defineProps<Props>(), {
   width: 128,
@@ -54,6 +63,16 @@ watchEffect(() => {
 </script>
 
 <style scoped lang="less">
+.qrcodq-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qrcode-text{
+  text-align: center;
+  word-break: break-all;
+}
 .empty{
   border: 1px solid #c1c1c1;
   display: flex;

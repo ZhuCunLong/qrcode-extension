@@ -11,7 +11,15 @@ export const useQrCodeFormStore = defineStore('qrCodeForm', () => {
   })
 
   const composeUrl = computed(() => {
-    return `${formData.prefix}${formData.url}`
+    let { prefix, url } = formData
+    const { prefixEnCodingMode, urlEnCodingMode } = formData
+    if(prefixEnCodingMode === 'encode') {
+      prefix = encodeURIComponent(prefix)
+    }
+    if(urlEnCodingMode === 'encode') {
+      url = encodeURIComponent(url)
+    }
+    return `${prefix}${url}`
   })
 
   return {

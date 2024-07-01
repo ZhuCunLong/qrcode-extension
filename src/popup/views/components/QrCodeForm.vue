@@ -1,5 +1,5 @@
 <template>
-  <el-form label-position="top" style="flex-grow: 1;">
+  <el-form label-position="top">
     <el-form-item label="前缀">
       <template #label>
         <div style="display: flex;align-items: center;justify-content: space-between;">
