@@ -1,19 +1,31 @@
 <template>
-  <div style="width: 500px;padding: 12px;" class="wrapper">
-    <el-card class="mr20" :body-style="{ padding: '12px' }">
+  <di
+    style="width: 500px;padding: 12px;"
+    class="wrapper"
+  >
+    <el-card
+      class="mr20"
+      :body-style="{ padding: '12px' }"
+    >
       <qr-code
         :text="text"
-        showText
+        show-text
       >
         <template #empty>
-          <el-empty :imageSize="100" description="暂无二维码"/>
+          <el-empty
+            :image-size="100"
+            description="暂无二维码"
+          />
         </template>
       </qr-code>
     </el-card>
-    <el-card style="flex-grow: 1;" :body-style="{ padding: '12px' }">
+    <el-card
+      style="flex-grow: 1;"
+      :body-style="{ padding: '12px' }"
+    >
       <qr-code-form />
     </el-card>
-  </div>
+  </di>
 </template>
 
 <script setup lang="ts">
