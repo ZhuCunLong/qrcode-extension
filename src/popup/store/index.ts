@@ -1,9 +1,16 @@
 
 import { defineStore, acceptHMRUpdate } from 'pinia'
-import { computed, reactive } from 'vue'
+import { computed, ref } from 'vue'
+
+interface FormDataState {
+  prefix: string
+  prefixEnCodingMode: 'encode' | 'decode'
+  url: string
+  urlEnCodingMode: 'encode' | 'decode'
+}
 
 export const useQrCodeFormStore = defineStore('qrCodeForm', () => {
-  const formData = reactive({
+  const formData = ref<FormDataState>({
     prefix: '',
     prefixEnCodingMode: 'decode',
     url: '',
@@ -11,8 +18,8 @@ export const useQrCodeFormStore = defineStore('qrCodeForm', () => {
   })
 
   const composeUrl = computed(() => {
-    let { prefix, url } = formData
-    const { prefixEnCodingMode, urlEnCodingMode } = formData
+    let { prefix, url } = formData.value
+    const { prefixEnCodingMode, urlEnCodingMode } = formData.value
     if(prefixEnCodingMode === 'encode') {
       prefix = encodeURIComponent(prefix)
     }
@@ -22,9 +29,17 @@ export const useQrCodeFormStore = defineStore('qrCodeForm', () => {
     return `${prefix}${url}`
   })
 
+  const setFormData = (data: FormDataState ) => {
+    formData.value = {
+      ...formData.value,
+      ...data,
+    }
+  }
+
   return {
     formData,
     composeUrl,
+    setFormData,
   }
 })
 
