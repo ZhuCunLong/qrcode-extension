@@ -4,14 +4,8 @@
     :style="{ width: `${width}px`}"
   >
     <div :style="{ height: `${height}px` }">
-      <div
-        v-show="text"
-        ref="divEl"
-      ></div>
-      <slot
-        v-if="!text"
-        name="empty"
-      >
+      <div v-show="text" ref="divEl"></div>
+      <slot v-if="!text" name="empty">
         <div class="empty">
           暂无内容
         </div>
