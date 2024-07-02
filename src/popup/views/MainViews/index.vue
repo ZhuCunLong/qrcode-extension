@@ -1,5 +1,5 @@
 <template>
-  <di
+  <div
     style="width: 500px;padding: 12px;"
     class="wrapper"
   >
@@ -25,7 +25,7 @@
     >
       <qr-code-form />
     </el-card>
-  </di>
+  </div>
 </template>
 
 <script setup lang="ts">

@@ -37,7 +37,6 @@ module.exports = merge(commonConfig, {
       writeToDisk: true,
     },
     client: {
-      logging: 'warn',
       overlay: false,
     },
   },

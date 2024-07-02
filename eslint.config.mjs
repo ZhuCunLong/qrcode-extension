@@ -11,8 +11,14 @@ const compat = new FlatCompat()
 
 export default [
   {
+    ignores: [
+      'node_modules/**',
+      'dist/**',
+      'public/**',
+    ],
+  },
+  {
     files: ['**/*.{js,mjs,cjs,ts,vue}'],
-    ignores: ['node_modules/**', 'dist/**', 'public/**'],
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,

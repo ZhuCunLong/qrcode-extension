@@ -7,8 +7,4 @@ import MainViews from './views/MainViews/index.vue'
 </script>
 
 <style lang="less">
-* {
-  margin: 0;
-  padding: 0;
-}
 </style>

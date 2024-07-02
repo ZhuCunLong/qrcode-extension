@@ -96,5 +96,4 @@ module.exports = {
     new ForkTsCheckerWebpackPlugin(),
     new CleanWebpackPlugin(),
   ],
-  stats: 'minimal', // 或者 'errors-warnings' 显示错误和警告
 }
