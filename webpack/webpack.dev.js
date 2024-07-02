@@ -1,5 +1,3 @@
-
-
 const webpack = require('webpack')
 const path = require('path')
 const fs = require('fs')
@@ -41,6 +39,6 @@ module.exports = merge(commonConfig, {
     client: {
       logging: 'warn',
       overlay: false,
-    }
-  }
+    },
+  },
 })

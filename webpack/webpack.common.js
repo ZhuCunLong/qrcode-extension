@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-
 const path = require('path')
 const fs = require('fs')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -28,7 +26,7 @@ const allHtmlWebpackPlugins = buildApp.map(
       template: item.page,
       chunks: [item.name],
       cache: true,
-    })
+    }),
 )
 
 module.exports = {
@@ -81,7 +79,7 @@ module.exports = {
             },
           },
         ],
-      }
+      },
     ],
   },
   plugins: [

@@ -1,15 +1,27 @@
 <template>
-  <div class="qrcode-container" :style="{ width: `${width}px`}">
-    <div :style="{  height: `${height}px` }">
-      <div v-show="text" ref="divEl"></div>
-      <slot v-if="!text" name="empty">
-        <div class="empty">暂无内容</div>
+  <div
+    class="qrcode-container"
+    :style="{ width: `${width}px`}"
+  >
+    <div :style="{ height: `${height}px` }">
+      <div
+        v-show="text"
+        ref="divEl"
+      ></div>
+      <slot
+        v-if="!text"
+        name="empty"
+      >
+        <div class="empty">
+          暂无内容
+        </div>
       </slot>
     </div>
     <div
       v-if="showText && text"
       style="text-align: center;"
-      class="mt20 qrcode-text">
+      class="mt20 qrcode-text"
+    >
       {{ text }}
     </div>
   </div>

@@ -10,7 +10,10 @@ import { FlatCompat } from '@eslint/eslintrc'
 const compat = new FlatCompat()
 
 export default [
-  { files: ['**/*.{js,mjs,cjs,ts,vue}'] },
+  {
+    files: ['**/*.{js,mjs,cjs,ts,vue}'],
+    ignores: ['node_modules/**', 'dist/**', 'public/**'],
+  },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -41,6 +44,18 @@ export default [
       'no-multi-spaces': 'error', // 禁止多余的空格
       'no-trailing-spaces': 'error', // 禁止行尾空格
       'vue/multi-word-component-names': 'off',
+      'vue/html-self-closing': [
+        'error',
+        {
+          html: {
+            void: 'never',
+            normal: 'never',
+            component: 'always',
+          },
+          svg: 'always',
+          math: 'always',
+        },
+      ],
     },
   },
 ]
