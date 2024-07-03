@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@types/lodash':
-        specifier: ^4.17.6
-        version: 4.17.6
       css-loader:
         specifier: ^7.1.2
         version: 7.1.2(webpack@5.92.1(webpack-cli@5.1.4))
@@ -36,6 +33,9 @@ importers:
       '@types/chrome':
         specifier: ^0.0.268
         version: 0.0.268
+      '@types/lodash':
+        specifier: ^4.17.6
+        version: 4.17.6
       '@vue/eslint-config-prettier':
         specifier: ^9.0.0
         version: 9.0.0(@types/eslint@8.56.10)(eslint@9.5.0)(prettier@3.3.2)
@@ -72,6 +72,9 @@ importers:
       less-loader:
         specifier: ^12.2.0
         version: 12.2.0(less@4.2.0)(webpack@5.92.1(webpack-cli@5.1.4))
+      mini-css-extract-plugin:
+        specifier: ^2.9.0
+        version: 2.9.0(webpack@5.92.1(webpack-cli@5.1.4))
       ts-loader:
         specifier: ^9.5.1
         version: 9.5.1(typescript@5.5.2)(webpack@5.92.1(webpack-cli@5.1.4))
@@ -1810,6 +1813,12 @@ packages:
   mimic-fn@2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
     engines: {node: '>=6'}
+
+  mini-css-extract-plugin@2.9.0:
+    resolution: {integrity: sha512-Zs1YsZVfemekSZG+44vBsYTLQORkPMwnlv+aehcxK/NLKC+EGhDB39/YePYYqx/sTk6NnYpuqikhSn7+JIevTA==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
 
   minimalistic-assert@1.0.1:
     resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==}
@@ -4626,6 +4635,12 @@ snapshots:
   mime@1.6.0: {}
 
   mimic-fn@2.1.0: {}
+
+  mini-css-extract-plugin@2.9.0(webpack@5.92.1(webpack-cli@5.1.4)):
+    dependencies:
+      schema-utils: 4.2.0
+      tapable: 2.2.1
+      webpack: 5.92.1(webpack-cli@5.1.4)
 
   minimalistic-assert@1.0.1: {}
 

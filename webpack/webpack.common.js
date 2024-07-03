@@ -6,6 +6,7 @@ const TsConfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 // project root path
 const appDirectory = fs.realpathSync(process.cwd())
@@ -63,12 +64,17 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          // 'style-loader',
+          'css-loader',
+        ],
       },
       {
         test: /\.less$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
+          // 'style-loader',
           'css-loader',
           {
             loader: 'less-loader',
@@ -83,6 +89,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].css',
+    }),
     new VueLoaderPlugin(),
     ...allHtmlWebpackPlugins,
     new CopyWebpackPlugin({
