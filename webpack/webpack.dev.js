@@ -23,16 +23,18 @@ module.exports = merge(commonConfig, {
     },
     compress: true,
     hot: true,
+    // 关闭热重载，因为修改静态文件后会导致整个页面重载，影响hmr，可能是因为开发时会把dist目录作为静态资源服务器，导致热重载时会触发整个页面的刷新
+    liveReload: false,
     port: 8080,
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
-    watchFiles: {
-      paths: [
-        path.resolve(appDirectory, 'src/**/*'),
-        path.resolve(appDirectory, 'public/**/*'),
-      ],
-    },
+    // watchFiles: {
+    //   paths: [
+    //     path.resolve(appDirectory, 'src/**/*'),
+    //     path.resolve(appDirectory, 'public/**/*'),
+    //   ],
+    // },
     devMiddleware: {
       writeToDisk: true,
     },
