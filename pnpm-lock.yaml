@@ -26,6 +26,9 @@ importers:
       vue:
         specifier: ^3.4.30
         version: 3.4.30(typescript@5.5.2)
+      vue-router:
+        specifier: ^4.4.0
+        version: 4.4.0(vue@3.4.30(typescript@5.5.2))
     devDependencies:
       '@eslint/js':
         specifier: ^9.5.0
@@ -2602,6 +2605,11 @@ packages:
         optional: true
       vue:
         optional: true
+
+  vue-router@4.4.0:
+    resolution: {integrity: sha512-HB+t2p611aIZraV2aPSRNXf0Z/oLZFrlygJm+sZbdJaW6lcFqEDQwnzUBXn+DApw+/QzDU/I9TeWx9izEjTmsA==}
+    peerDependencies:
+      vue: ^3.2.0
 
   vue-template-compiler@2.7.16:
     resolution: {integrity: sha512-AYbUWAJHLGGQM7+cNTELw+KsOG9nl2CnSv467WobS5Cv9uk3wFcnr1Etsz2sEIHEZvw1U+o9mRlEO6QbZvUPGQ==}
@@ -5368,6 +5376,11 @@ snapshots:
       watchpack: 2.4.1
       webpack: 5.92.1(webpack-cli@5.1.4)
     optionalDependencies:
+      vue: 3.4.30(typescript@5.5.2)
+
+  vue-router@4.4.0(vue@3.4.30(typescript@5.5.2)):
+    dependencies:
+      '@vue/devtools-api': 6.6.3
       vue: 3.4.30(typescript@5.5.2)
 
   vue-template-compiler@2.7.16:

@@ -99,7 +99,6 @@ module.exports = {
         { from: 'public/*.json', to: '[name][ext]' },
         { from: 'public/*.png', to: 'img/[name][ext]' },
         { from: 'public/manifest.json', to: '[name][ext]' },
-        { from: 'public/lib/**/*', to: 'lib/[name][ext]' },
       ],
     }),
     new ForkTsCheckerWebpackPlugin(),

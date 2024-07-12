@@ -8,8 +8,9 @@ module.exports = [
   },
   {
     name: 'options',
-    entry: './src/options/index.tsx',
+    entry: './src/options/index.ts',
     page: 'public/options.html',
+    build: true,
   },
   {
     name: 'devtools',
@@ -18,12 +19,12 @@ module.exports = [
   },
   {
     name: 'panel',
-    entry: './src/panel/index.tsx',
+    entry: './src/panel/index.ts',
     page: 'public/panel.html',
   },
   {
     name: 'sidebar',
-    entry: './src/sidebar/index.tsx',
+    entry: './src/sidebar/index.ts',
     page: 'public/sidebar.html',
   },
   {

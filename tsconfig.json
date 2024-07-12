@@ -15,6 +15,7 @@
     "paths": {
       "@/*": ["src/*"],
       "@popup/*": ["src/popup/*"],
+      "@options/*": ["src/options/*"],
       "@common/*": ["src/common/*"],
     },
   },
