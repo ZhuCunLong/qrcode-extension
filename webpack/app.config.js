@@ -16,6 +16,7 @@ module.exports = [
     name: 'devtools',
     entry: './src/devtools/index.ts',
     page: 'public/devtools.html',
+    build: true,
   },
   {
     name: 'panel',
@@ -30,6 +31,7 @@ module.exports = [
   {
     name: 'background',
     entry: './src/background.ts',
+    build: true,
   },
   {
     name: 'inject_script',

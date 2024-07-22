@@ -6,6 +6,15 @@ module.exports = merge(commonConfig, {
   optimization: {
     splitChunks: {
       chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /node_modules/,
+          name: 'vendor',
+          chunks: 'initial',
+          minSize: 0,
+          priority: 1,
+        },
+      },
     },
   },
 })

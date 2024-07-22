@@ -1,5 +1,6 @@
 const path = require('path')
 const fs = require('fs')
+const chalk = require('chalk')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const TsConfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
@@ -7,6 +8,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 
 // project root path
 const appDirectory = fs.realpathSync(process.cwd())
@@ -20,15 +22,16 @@ const entry = buildApp.reduce((res, item) => {
   return res
 }, {})
 
-const allHtmlWebpackPlugins = buildApp.map(
-  (item) =>
+const allHtmlWebpackPlugins = buildApp
+  .filter(item => item.page)
+  .map(item =>
     new HtmlWebpackPlugin({
       filename: `${item.name}.html`,
       template: item.page,
       chunks: [item.name],
       cache: true,
     }),
-)
+  )
 
 module.exports = {
   resolve: {
@@ -89,6 +92,11 @@ module.exports = {
     ],
   },
   plugins: [
+    // 进度条
+    new ProgressBarPlugin({
+      format: `  :msg [:bar] ${chalk.green.bold(':percent')} (:elapsed s)`,
+      clear: true,
+    }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
     }),

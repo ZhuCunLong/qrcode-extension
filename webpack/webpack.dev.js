@@ -40,7 +40,7 @@ module.exports = merge(commonConfig, {
     },
     client: {
       overlay: false,
-      logging: 'error',
+      logging: 'warn',
     },
   },
 })

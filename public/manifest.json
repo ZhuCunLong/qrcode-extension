@@ -15,10 +15,14 @@
     "page": "options.html",
     "open_in_tab": true
   },
+  "devtools_page": "devtools.html",
   "permissions": [
     "tabs",
     "storage"
   ],
+  "background": {
+    "service_worker": "js/background.bundle.js"
+  },
   "host_permissions": [
     "*://*/*"
   ]
